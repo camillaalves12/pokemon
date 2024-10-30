@@ -1,0 +1,74 @@
+.card {
+  width: 15rem;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Controla a suavidade da animação */
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+  .img {
+    background-color: #f2eeee;
+    border-radius: 5px;
+  }
+  .idPoke {
+    color: #939393;
+    font-weight: 500;
+    margin-left: 18px;
+  }
+  .name {
+    font-size: 1.6rem;
+  }
+  .typesContainer {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .type {
+    padding: 2px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+  }
+  .fire {
+    background-color: #fd7d24;
+  }
+  .water {
+    background-color: #4592C4;
+  }
+  .grass {
+    background-color: #9bcc50 ;
+    color: #000
+
+  }
+  .poison {
+    background-color: #b37Fc9;
+  }
+  .bug {
+    background-color: #729f3f;
+  }
+  .normal {
+    background-color: #a4acaf;
+    color: #000
+  }
+  .ground {
+    background-color: #f7de3f;
+    color: #000
+
+  }
+  .flying {
+    background-color: #71b5f1;
+    color: #000
+
+  }
+  .electric {
+    background-color: #eed535;
+    color: #000
+
+  }
+  .fada {
+    background-color: #f07cf4;
+  }
+}
