@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import api from '../../services/api';
 import { useSearch } from '../../components/context/SearchContext';
 import S from './styles.module.scss';
+import SpinnerError from '../../components/spinnerError';
 
 type PokemonDataItem = {
   name: string;
@@ -65,15 +66,13 @@ const Home = () => {
 
   return (
     <Container className={S.container}>
-      {filteredData.map((item: PokemonDataItem) => (
-        <PokemonCard
-          key={item.name}
-          src={item.src}
-          name={item.name}
-          type={item.type}
-          id={item.id}
-        />
-      ))}
+      {filteredData.length > 0 ? (
+        filteredData.map((item: PokemonDataItem) => (
+          <PokemonCard key={item.name} src={item.src} name={item.name} type={item.type} id={item.id} />
+        ))
+      ) : (
+        <p className={S.notFoundMessage}> <SpinnerError/> Pokémon não encontrado</p> // Mensagem quando nenhum Pokémon é encontrado
+      )}
     </Container>
   );
 };
