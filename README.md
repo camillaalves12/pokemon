@@ -4,9 +4,9 @@
 
 ## 🚀 Funcionalidades
 
-### Exibe uma lista de Pokémon com informações básicas.
-### Detalhes individuais para cada Pokémon (Nome e tipos).
-### Busca e navegação para encontrar Pokémon específicos.
+### • Exibe uma lista de Pokémon com informações básicas.
+### • Detalhes individuais para cada Pokémon (Nome e tipos).
+### • Busca e navegação para encontrar Pokémon específicos.
 
 # 📚 Tecnologias Utilizadas
 
