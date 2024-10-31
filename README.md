@@ -8,7 +8,7 @@
 ### Detalhes individuais para cada Pokémon (Nome e tipos).
 ### Busca e navegação para encontrar Pokémon específicos.
 
-#📚 Tecnologias Utilizadas
+# 📚 Tecnologias Utilizadas
 
 <div>
   <img align="center" alt="React" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg">
