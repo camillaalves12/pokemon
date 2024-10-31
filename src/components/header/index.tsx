@@ -1,19 +1,34 @@
-import { Container, Navbar, NavbarCollapse, Nav } from 'react-bootstrap'
+import { Container, Navbar, Form } from 'react-bootstrap';
+import S from './styles.module.scss';
 
-const Header = () => {
+type HeaderProps = {
+  onSearchChange: (value: string) => void;
+};
+
+const Header = ({ onSearchChange }: HeaderProps) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onSearchChange(event.target.value); // Atualiza o estado do Home a cada tecla
+  };
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="/">Pokemon</Navbar.Brand>
-        <NavbarCollapse id="basic-navbar-nav">
-          <Nav>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/contact">Contato</Nav.Link>
-          </Nav>
-        </NavbarCollapse>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Form className={`${S.forms} d-flex`}>
+            <Form.Control
+              type="search"
+              placeholder="Buscar por nome ou tipo"
+              className={S.input}
+              aria-label="Search"
+              onChange={handleInputChange} // Chama o manipulador de mudança
+            />
+          </Form>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
