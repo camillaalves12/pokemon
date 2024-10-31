@@ -1,15 +1,14 @@
 .forms {
-    display: flex;
-    gap: 10px;
-
+  display: flex;
+  gap: 10px;
 }
 .input {
-    outline: none;
+  outline: none;
+  outline: none;
+  box-shadow: none;
+
+  &:focus {
     outline: none;
     box-shadow: none;
-
-    &:focus {
-        outline: none;
-        box-shadow: none;
-    }
+  }
 }

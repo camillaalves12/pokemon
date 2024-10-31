@@ -1,7 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom'
-import Layout from './components/layout'
-import Home from './pages/home'
-import { SearchProvider } from './components/context/SearchContext'
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from './components/layout';
+import Home from './pages/home';
+import { SearchProvider } from './components/context/SearchContext';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
-export default router
+export default router;

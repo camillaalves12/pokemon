@@ -27,23 +27,25 @@ const Home = () => {
         const pokemonDetails = await Promise.all(
           results.map(async (item: { name: string }, index: number) => {
             const pokemonDetail = await api.get(`/pokemon/${item.name}`);
-            const types = Array.isArray(pokemonDetail.data.types) 
-              ? pokemonDetail.data.types.map((typeInfo: any) => typeInfo.type.name)
+            const types = Array.isArray(pokemonDetail.data.types)
+              ? pokemonDetail.data.types.map(
+                  (typeInfo: any) => typeInfo.type.name,
+                )
               : [];
 
             return {
               name: item.name.charAt(0).toUpperCase() + item.name.slice(1),
               src: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${String(index + 1).padStart(3, '0')}.png`,
               type: types,
-              id: index + 1
+              id: index + 1,
             };
-          })
+          }),
         );
 
         setPokemonData(pokemonDetails);
         setFilteredData(pokemonDetails);
       } catch (error) {
-        console.error("Erro ao buscar dados do Pokémon:", error);
+        console.error('Erro ao buscar dados do Pokémon:', error);
       }
     };
 
@@ -54,7 +56,9 @@ const Home = () => {
     const filteredResults = pokemonData.filter(
       (pokemon) =>
         pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        pokemon.type.some(t => t.toLowerCase().includes(searchTerm.toLowerCase()))
+        pokemon.type.some((t) =>
+          t.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
     );
     setFilteredData(filteredResults);
   }, [searchTerm, pokemonData]);
@@ -62,7 +66,13 @@ const Home = () => {
   return (
     <Container className={S.container}>
       {filteredData.map((item: PokemonDataItem) => (
-        <PokemonCard key={item.name} src={item.src} name={item.name} type={item.type} id={item.id} />
+        <PokemonCard
+          key={item.name}
+          src={item.src}
+          name={item.name}
+          type={item.type}
+          id={item.id}
+        />
       ))}
     </Container>
   );

@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
-import Header from '../header'
-import { useSearch } from '../context/SearchContext'
+import { Outlet } from 'react-router-dom';
+import Header from '../header';
+import { useSearch } from '../context/SearchContext';
 
 const Layout = () => {
   const { setSearchTerm } = useSearch(); // Pega a função para atualizar o termo de busca
@@ -17,4 +17,4 @@ const Layout = () => {
   );
 };
 
-export default Layout
+export default Layout;
