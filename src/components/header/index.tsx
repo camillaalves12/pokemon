@@ -13,7 +13,7 @@ const Header = ({ onSearchChange }: HeaderProps) => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">Pokemon</Navbar.Brand>
+        <Navbar.Brand href="/">Pokémon</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Form className={`${S.forms} d-flex`}>
